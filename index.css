@@ -9,7 +9,12 @@ main {
 #guess {
   width: 5em;
 }
+/* Hide message elements and reset button on initial load per README requirements */
+.message {
+  display: none;
+}
 
 #reset {
-  margin: 20px;
+  display: none;
+
 }
