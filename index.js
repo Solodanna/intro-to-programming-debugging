@@ -40,7 +40,7 @@ function checkGuess() {
   const remainingAttempts = maxNumberOfAttempts - attempts;
 
   // Always display the guessed number and how many guesses remain
-  numberOfGuessesMessage.style.display = "";
+  numberOfGuessesMessage.style.display = "block";
   const guessWord = remainingAttempts === 1 ? "guess" : "guesses";
   numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${Math.max(
     0,
@@ -48,25 +48,25 @@ function checkGuess() {
   )} ${guessWord} remaining`;
 
   if (guess === targetNumber) {
-    correctMessage.style.display = "";
+    correctMessage.style.display = "block";
     submitButton.disabled = true;
     guessInput.disabled = true;
   } else if (guess < targetNumber) {
-    tooLowMessage.style.display = "";
+    tooLowMessage.style.display = "block";
   } else {
-    tooHighMessage.style.display = "";
+    tooHighMessage.style.display = "block";
   }
 
   // If used all attempts and didn't guess correctly, show max-guesses message and disable
   if (attempts >= maxNumberOfAttempts && guess !== targetNumber) {
     submitButton.disabled = true;
     guessInput.disabled = true;
-    maxGuessesMessage.style.display = "";
+    maxGuessesMessage.style.display = "block";
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> 0 guesses remaining`;
   }
 
   guessInput.value = "";
-  resetButton.style.display = "";
+  resetButton.style.display = "inline-block";
 }
 
 // Hide all message elements.
